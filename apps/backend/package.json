@@ -1,0 +1,16 @@
+{
+  "name": "@phoenix/backend",
+  "version": "4.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit false --outDir dist",
+    "dev": "npm run build && node --watch dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test dist/policy.test.js dist/control-plane.test.js dist/network.test.js dist/router.test.js dist/recovery-proof.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  }
+}

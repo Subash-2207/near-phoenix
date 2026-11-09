@@ -1,0 +1,283 @@
+{
+  "builder": "cargo near build non-reproducible-wasm --locked --no-abi (wasm-opt enabled)",
+  "sdkDeclaredMinimumProtocolVersion": 88,
+  "cargoLockSha256": "d14a0cf68dab9fe7b8c1b7033428e01f16f609af22f72fad7def7ea1d75c2640",
+  "validation": "Optimized artifact parsing, reviewed host import names and required exports. Runtime execution remains a separate check.",
+  "artifacts": [
+    {
+      "crate": "phoenix-core",
+      "path": "target/near/phoenix_core/phoenix_core.wasm",
+      "bytes": 278665,
+      "sha256": "b1153697114a7e44dc43ceb5b04f7f1a98844950fd09e374a63550580ff77b4e",
+      "sourceSha256": "20f03849aa02883a0c2ed9cbccf24c1b082eca501c21ec24a3e80d2ddff7b656",
+      "imports": [
+        {
+          "module": "env",
+          "name": "value_return",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "ed25519_verify",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "read_register",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "register_len",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "storage_read",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "storage_write",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "storage_remove",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "storage_has_key",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "log_utf8",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "input",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "panic_utf8",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "block_timestamp",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "attached_deposit",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "current_account_id",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "predecessor_account_id",
+          "kind": "function"
+        }
+      ],
+      "exports": [
+        "memory",
+        "anchor_security_audit",
+        "approve_checkpoint_recovery",
+        "approve_recovery",
+        "approve_signed_recovery",
+        "authorize_signed_action",
+        "commit_checkpoint",
+        "configure_sentinel",
+        "configure_stateflow",
+        "contain",
+        "contract_source_metadata",
+        "expire_recovery_lease",
+        "get_agent",
+        "get_recovery_receipt",
+        "get_security_audit",
+        "get_security_revision",
+        "get_sentinel_policy",
+        "get_stateflow",
+        "heartbeat",
+        "is_paused",
+        "new",
+        "record_recovery_receipt",
+        "recover",
+        "recover_checkpoint",
+        "register_agent",
+        "reopen_contained",
+        "report_crash",
+        "set_paused"
+      ]
+    },
+    {
+      "crate": "rewind-vault",
+      "path": "target/near/rewind_vault/rewind_vault.wasm",
+      "bytes": 237980,
+      "sha256": "fa5c22e03eca8035f3238dcb5970a4b3ee688ccedb0da0f65c0d3a8d994b0227",
+      "sourceSha256": "5e76116889297896f167b5196034184ef38832fd1477251cd96314de45660c66",
+      "imports": [
+        {
+          "module": "env",
+          "name": "value_return",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "ed25519_verify",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "read_register",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "promise_return",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "register_len",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "storage_read",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "storage_usage",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "storage_write",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "account_balance",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "storage_has_key",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_then",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_create",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "promise_result",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_transfer",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "log_utf8",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_function_call_weight",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "input",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "panic_utf8",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "used_gas",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "prepaid_gas",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "block_timestamp",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "attached_deposit",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "current_account_id",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "promise_results_count",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "predecessor_account_id",
+          "kind": "function"
+        }
+      ],
+      "exports": [
+        "memory",
+        "accounting",
+        "advance_task_epoch",
+        "approve_fenced_payment",
+        "approve_payment",
+        "approve_signed_payment",
+        "authorize_refund",
+        "cancel_payment",
+        "configure_sentinel",
+        "contract_source_metadata",
+        "create_task",
+        "enable_task_fencing",
+        "get_operation",
+        "get_task",
+        "is_safe_mode",
+        "mark_uncertain",
+        "new",
+        "on_transfer",
+        "refund",
+        "reserve_fenced_payment",
+        "reserve_payment",
+        "set_safe_mode",
+        "set_task_paused",
+        "settle_fenced_payment",
+        "settle_payment"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[package]
+name = "phoenix-security-types"
+version = "4.3.0"
+edition = "2021"
+publish = false
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+borsh = { version = "1", features = ["derive"] }

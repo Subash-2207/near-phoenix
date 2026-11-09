@@ -1,0 +1,27 @@
+{
+  "name": "@phoenix/dashboard",
+  "version": "4.3.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "test:wallet": "node app/wallet-session.test.mjs",
+    "test:evidence": "node app/evidence-metrics.test.mjs",
+    "test:transitions": "node app/recovery-transitions.test.mjs"
+  },
+  "dependencies": {
+    "@fontsource/geist": "5.3.0",
+    "motion": "14.9.1",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "@hot-labs/near-connect": "0.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.9.0"
+  }
+}

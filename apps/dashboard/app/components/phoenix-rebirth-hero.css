@@ -1,0 +1,460 @@
+.rebirth-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  min-height: clamp(560px, calc(100svh - 230px), 760px);
+  margin: 12px 0 34px;
+  overflow: hidden;
+  border: 1px solid #b4d2ff1e;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 74% 48%, #1a63701d, transparent 43%),
+    radial-gradient(ellipse at 86% 16%, #664cb51c, transparent 40%),
+    linear-gradient(128deg, #0b1020f2 6%, #0a1120d9 60%, #080c19f2);
+  box-shadow:
+    inset 0 1px 0 #ffffff09,
+    0 30px 90px -56px #000,
+    0 0 64px -45px color-mix(in srgb, var(--cerulean-glow) 18.82%, transparent);
+}
+.rebirth-hero::before,
+.rebirth-hero::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+.rebirth-hero::before {
+  inset: 0;
+  opacity: 0.24;
+  background-image:
+    linear-gradient(#9bc2ff0b 1px, transparent 1px),
+    linear-gradient(90deg, #9bc2ff0b 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(100deg, transparent, #000 54%, #000);
+}
+.rebirth-hero::after {
+  top: -28%;
+  right: 5%;
+  width: 48%;
+  height: 72%;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--cerulean-glow) 4.31%, transparent);
+  filter: blur(70px);
+  animation: rebirth-ambient-breathe 18s ease-in-out infinite alternate;
+}
+.rebirth-ambient {
+  position: absolute;
+  z-index: -1;
+  inset: auto 0 0;
+  height: 36%;
+  background: linear-gradient(
+    transparent,
+    color-mix(in srgb, var(--cerulean-glow) 2.75%, transparent)
+  );
+  pointer-events: none;
+}
+.rebirth-copy {
+  z-index: 3;
+  width: min(100%, 510px);
+  padding: 44px 0 54px clamp(28px, 5vw, 72px);
+}
+.rebirth-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 25px;
+  color: #9aabc4;
+  font: 9px var(--mono, ui-monospace, monospace);
+  letter-spacing: 0.17em;
+}
+.rebirth-skip {
+  display: inline-flex;
+  min-height: 30px;
+  margin: -15px 0 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #9aaac1;
+  font-size: 9px;
+  text-decoration: underline;
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--cerulean-glow) 44%,
+    transparent
+  );
+  text-underline-offset: 3px;
+}
+.rebirth-skip:hover,
+.rebirth-skip:focus-visible {
+  color: var(--cerulean-glow);
+}
+.rebirth-status-mark {
+  width: 7px;
+  height: 7px;
+  border: 1px solid #7b9aaf;
+  border-radius: 50%;
+  box-shadow: 0 0 9px
+    color-mix(in srgb, var(--cerulean-glow) 23.92%, transparent);
+}
+.rebirth-copy h2 {
+  display: flex;
+  gap: 0.06em;
+  margin: 0;
+  color: #f1f7ff;
+  font-size: clamp(42px, 5.1vw, 76px);
+  font-weight: 600;
+  letter-spacing: 0.105em;
+  line-height: 0.98;
+  text-shadow: 0 0 40px
+    color-mix(in srgb, var(--cerulean-glow) 7.06%, transparent);
+}
+.rebirth-copy h2 span:nth-child(2n) {
+  color: #b3c1d3;
+}
+.rebirth-copy h2 span:last-child {
+  color: var(--cerulean-glow);
+}
+.rebirth-subtitle {
+  max-width: 440px;
+  margin: 24px 0 0;
+  color: #d9e3f1;
+  font-size: clamp(17px, 1.6vw, 22px);
+  font-weight: 450;
+  letter-spacing: -0.025em;
+  line-height: 1.45;
+}
+.rebirth-description {
+  max-width: 390px;
+  margin: 12px 0 0;
+  color: #96a5bc;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.rebirth-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.rebirth-actions .button {
+  min-height: 43px;
+  text-decoration: none;
+}
+.rebirth-actions .button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 8px 30px -18px
+    color-mix(in srgb, var(--cerulean-glow) 53.33%, transparent);
+}
+.rebirth-actions .button-primary span {
+  font-size: 15px;
+  line-height: 1;
+}
+.rebirth-actions .button-secondary {
+  display: inline-flex;
+  align-items: center;
+}
+.rebirth-disclosure {
+  margin: 20px 0 0;
+  color: #7788a2;
+  font-size: 9px;
+  letter-spacing: 0.015em;
+}
+.rebirth-scene {
+  position: absolute;
+  inset: 0 0 0 26%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform-origin: 57% 51%;
+  will-change: transform;
+}
+.rebirth-scene-label {
+  position: absolute;
+  z-index: 2;
+  top: 29px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #7589a5;
+  font: 8px var(--mono, ui-monospace, monospace);
+  letter-spacing: 0.09em;
+}
+.rebirth-scene-label span:first-child {
+  color: var(--cerulean-glow);
+}
+.rebirth-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.rebirth-orbit {
+  fill: none;
+  stroke: #8bb8cc;
+  stroke-dasharray: 1 0.018 0.002 0.02;
+  stroke-opacity: 0.22;
+  stroke-width: 0.8;
+  transform: rotate(-11deg);
+  transform-origin: center;
+}
+.rebirth-grid-line {
+  fill: none;
+  stroke: #76b1be;
+  stroke-opacity: 0.12;
+  stroke-width: 0.8;
+}
+.rebirth-floor-glow {
+  fill: var(--cerulean-glow);
+  filter: blur(25px);
+  opacity: 0.07;
+}
+.rebirth-energy-loop {
+  fill: none;
+  stroke: var(--cerulean-glow);
+  stroke-dasharray: 3 13;
+  stroke-linecap: round;
+  stroke-opacity: 0.46;
+  stroke-width: 1.15;
+  filter: drop-shadow(
+    0 0 7px color-mix(in srgb, var(--cerulean-glow) 28.24%, transparent)
+  );
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.rebirth-glyph {
+  fill: var(--cerulean-glow);
+  font: 11px var(--mono, ui-monospace, monospace);
+  letter-spacing: 0.12em;
+  text-anchor: middle;
+  filter: drop-shadow(
+    0 0 4px color-mix(in srgb, var(--cerulean-glow) 56.08%, transparent)
+  );
+}
+.rebirth-fragment {
+  fill: var(--cerulean-glow);
+  filter: drop-shadow(
+    0 0 4px color-mix(in srgb, var(--cerulean-glow) 70.2%, transparent)
+  );
+}
+.rebirth-energy-wave {
+  fill: none;
+  stroke: var(--cerulean-glow);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 12px var(--cerulean-glow));
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.rebirth-wings {
+  filter: drop-shadow(0 12px 18px #020610a6);
+}
+.rebirth-wing {
+  stroke: #a9c0d1;
+  stroke-opacity: 0.58;
+  stroke-width: 1.1;
+  stroke-linejoin: round;
+}
+.rebirth-feather-seam {
+  fill: none;
+  stroke: var(--cerulean-glow);
+  stroke-opacity: 0.56;
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+.rebirth-tail {
+  stroke: #7593a6;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+.rebirth-neck,
+.rebirth-chest {
+  stroke: #d1e5ee;
+  stroke-opacity: 0.78;
+  stroke-width: 1.3;
+  stroke-linejoin: round;
+}
+.rebirth-beak {
+  stroke: #ffe9b7;
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+.rebirth-chest-panel {
+  fill: #122d3a;
+  stroke: var(--cerulean-glow);
+  stroke-opacity: 0.8;
+  stroke-width: 1;
+}
+.rebirth-armor-line,
+.rebirth-leg {
+  fill: none;
+  stroke: var(--cerulean-glow);
+  stroke-opacity: 0.86;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.rebirth-eye-glow {
+  opacity: 0.78;
+}
+.rebirth-eye {
+  fill: #f4ffff;
+  filter: drop-shadow(0 0 5px var(--cerulean-glow));
+}
+.rebirth-orbit-point {
+  fill: var(--cerulean-glow);
+  filter: drop-shadow(0 0 5px var(--cerulean-glow));
+}
+.rebirth-coordinate {
+  position: absolute;
+  right: 30px;
+  bottom: 28px;
+  display: grid;
+  gap: 5px;
+  color: #71839d;
+  font: 7px var(--mono, ui-monospace, monospace);
+  letter-spacing: 0.12em;
+  text-align: right;
+}
+.rebirth-coordinate span:last-child {
+  color: #a3b2c8;
+}
+.rebirth-scroll {
+  position: absolute;
+  bottom: 25px;
+  left: clamp(28px, 5vw, 72px);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #8292aa;
+  font-size: 9px;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.rebirth-scroll:hover,
+.rebirth-scroll:focus-visible {
+  color: var(--cerulean-glow);
+}
+.rebirth-scroll span:last-child {
+  color: var(--cerulean-glow);
+  font-size: 13px;
+}
+@keyframes rebirth-ambient-breathe {
+  from {
+    transform: translate3d(-4%, -2%, 0) scale(0.94);
+    opacity: 0.5;
+  }
+  to {
+    transform: translate3d(3%, 2%, 0) scale(1.08);
+    opacity: 0.9;
+  }
+}
+@media (max-width: 980px) {
+  .rebirth-hero {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+  .rebirth-copy {
+    padding-left: 32px;
+  }
+  .rebirth-copy h2 {
+    font-size: clamp(38px, 5.2vw, 62px);
+  }
+  .rebirth-scene {
+    left: 20%;
+  }
+  .rebirth-scroll {
+    left: 32px;
+  }
+}
+@media (max-width: 720px) {
+  .rebirth-hero {
+    display: block;
+    min-height: 690px;
+    margin-top: 8px;
+    border-radius: 18px;
+  }
+  .rebirth-copy {
+    position: relative;
+    width: 100%;
+    padding: 40px 24px 0;
+  }
+  .rebirth-kicker {
+    margin-bottom: 20px;
+    font-size: 8px;
+  }
+  .rebirth-copy h2 {
+    font-size: clamp(40px, 12vw, 64px);
+  }
+  .rebirth-subtitle {
+    max-width: 360px;
+    margin-top: 17px;
+    font-size: 17px;
+  }
+  .rebirth-description {
+    max-width: 330px;
+    font-size: 11px;
+  }
+  .rebirth-actions {
+    gap: 8px;
+    margin-top: 19px;
+  }
+  .rebirth-actions .button {
+    min-height: 39px;
+    padding: 0 11px;
+    font-size: 10px;
+  }
+  .rebirth-disclosure {
+    max-width: 290px;
+    margin-top: 13px;
+    font-size: 8px;
+  }
+  .rebirth-scene {
+    inset: 190px -20px 18px -20px;
+    opacity: 0.86;
+  }
+  .rebirth-scene-label {
+    top: auto;
+    right: 22px;
+    bottom: 12px;
+    font-size: 7px;
+  }
+  .rebirth-coordinate {
+    display: none;
+  }
+  .rebirth-scroll {
+    bottom: 19px;
+    left: 24px;
+  }
+}
+@media (max-width: 390px) {
+  .rebirth-hero {
+    min-height: 725px;
+  }
+  .rebirth-copy {
+    padding-inline: 19px;
+  }
+  .rebirth-copy h2 {
+    font-size: 39px;
+    letter-spacing: 0.075em;
+  }
+  .rebirth-actions .button {
+    font-size: 9px;
+  }
+  .rebirth-scene {
+    inset: 218px -48px 15px -48px;
+  }
+  .rebirth-scroll {
+    left: 19px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rebirth-hero::after {
+    animation: none;
+  }
+  .rebirth-scene {
+    will-change: auto;
+  }
+}

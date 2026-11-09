@@ -1,0 +1,179 @@
+{
+  "api": {
+    "postStatus": 202,
+    "postInitialStatus": "running",
+    "getStatus": 200
+  },
+  "status": "succeeded",
+  "events": [
+    {
+      "id": 1,
+      "at": "2026-11-09T06:25:43.670Z",
+      "kind": "sandbox_configured",
+      "details": {
+        "agent_id": "dev-20261109062536-55698585064985.test.near",
+        "core_id": "dev-20261109062534-22423584350710.test.near",
+        "deployment": "2382892-1794205539852663831",
+        "network": "sandbox",
+        "sentinel_account": "dev-20261109062536-13608751029778.test.near",
+        "sentinel_public_key": "197f6b23e16c8532c6abc838facd5ea789be0c76b2920334039bfa8b3d368d61",
+        "task_id": "recovery-task",
+        "vault_id": "dev-20261109062535-69810737697313.test.near"
+      }
+    },
+    {
+      "id": 2,
+      "at": "2026-11-09T06:25:45.233Z",
+      "kind": "primary_heartbeat",
+      "details": {
+        "epoch": 0,
+        "worker": "66be7e332c7a453332bd9d0a7f7db055f5c5ef1a06ada66d98b39fb6810c473a"
+      }
+    },
+    {
+      "id": 3,
+      "at": "2026-11-09T06:25:45.233Z",
+      "kind": "checkpoint_committed",
+      "details": {
+        "digest": "4ae476dffb16c6353c1b1b2c0c424b01e9bab239ade3d3c07e5bb91af74817cf",
+        "sequence": 1
+      }
+    },
+    {
+      "id": 4,
+      "at": "2026-11-09T06:25:45.234Z",
+      "kind": "primary_failed",
+      "details": {
+        "checkpoint": "4ae476dffb16c6353c1b1b2c0c424b01e9bab239ade3d3c07e5bb91af74817cf",
+        "epoch": 0
+      }
+    },
+    {
+      "id": 5,
+      "at": "2026-11-09T06:26:07.231Z",
+      "kind": "backup_restored",
+      "details": {
+        "checkpoint": "4ae476dffb16c6353c1b1b2c0c424b01e9bab239ade3d3c07e5bb91af74817cf",
+        "epoch": 1,
+        "worker": "884b8857f4eaa1613c61504db34d4beaf346517a0e31de3cddd4d9b4201d9d0b"
+      }
+    },
+    {
+      "id": 6,
+      "at": "2026-11-09T06:26:11.313Z",
+      "kind": "payment_settled",
+      "details": {
+        "amount": "1000000000000000000000000",
+        "epoch": 1,
+        "operation_id": "0b3db2802b313a786e64c56b546a91d55d8d6c2870a35e0eb0029cdcc866d93f",
+        "outcome": "Paid",
+        "recipient": "dev-20261109062537-65345800287645.test.near"
+      }
+    },
+    {
+      "id": 7,
+      "at": "2026-11-09T06:26:14.349Z",
+      "kind": "duplicate_payment_prevented",
+      "details": {
+        "operation_id": "0b3db2802b313a786e64c56b546a91d55d8d6c2870a35e0eb0029cdcc866d93f",
+        "paid": "1000000000000000000000000",
+        "recipient_balance_delta": "1000000000000000000000000"
+      }
+    },
+    {
+      "id": 8,
+      "at": "2026-11-09T06:26:15.102Z",
+      "kind": "recovery_receipt_verified",
+      "details": {
+        "body": {
+          "backup_identity": "884b8857f4eaa1613c61504db34d4beaf346517a0e31de3cddd4d9b4201d9d0b",
+          "checkpoint_hash": "4ae476dffb16c6353c1b1b2c0c424b01e9bab239ade3d3c07e5bb91af74817cf",
+          "domain": {
+            "agent_id": "dev-20261109062536-55698585064985.test.near",
+            "code_digest": "64c7e5959c12658c7ae47d5d669d071e4f55bed9af720fe592780d2f87b27750",
+            "core_id": "dev-20261109062534-22423584350710.test.near",
+            "deployment": "2382892-1794205539852663831",
+            "execution_id": "primary-execution",
+            "network": "sandbox",
+            "policy_digest": "ec1ace7e19229bd1dff7e983d943e0b8c257ca4d6f6a7b8ef38d63038d44cfd7",
+            "task_id": "recovery-task",
+            "vault_id": "dev-20261109062535-69810737697313.test.near"
+          },
+          "epoch_from": "0",
+          "epoch_to": "1",
+          "expires_at": "1794206213047131737",
+          "issued_at": "1794206153047131737",
+          "nonce": "2",
+          "primary_identity": "66be7e332c7a453332bd9d0a7f7db055f5c5ef1a06ada66d98b39fb6810c473a",
+          "security_revision": "0",
+          "settlement_block_height": "2181",
+          "settlement_evidence_hash": "24064268544f2c2452d1fba4cce9ce678f96f1a3ae9332ee3de191664658fdd9",
+          "settlement_outcome": "Succeeded",
+          "settlement_reference": "0b3db2802b313a786e64c56b546a91d55d8d6c2870a35e0eb0029cdcc866d93f",
+          "task_id": "recovery-task"
+        },
+        "core_id": "dev-20261109062534-22423584350710.test.near",
+        "evidence": {
+          "amount": "1000000000000000000000000",
+          "block_hash": "J6cXjT3bCMxHuz7sxNMd3LUMgSPmt4PjFWjZWtUdosww",
+          "block_height": 2181,
+          "execution_epoch": 1,
+          "outcome": "Succeeded",
+          "recipient": "dev-20261109062537-65345800287645.test.near",
+          "settlement_reference": "0b3db2802b313a786e64c56b546a91d55d8d6c2870a35e0eb0029cdcc866d93f",
+          "task_id": "recovery-task"
+        },
+        "on_chain_verified": true,
+        "signature": "f24df837ad8f0e52e52294b6bdb302aabb3a47417dc8a593ee1d8e3440d5d4324d562ca2a43e79ec2e602e4ec027250c33820f4e9bbafdc8cd85eee72c25b30b",
+        "signing_bytes_hex": "4e4541525f50484f454e49585f5245434f564552595f524543454950545f5631000700000073616e64626f781b000000323338323839322d313739343230353533393835323636333833312b0000006465762d32303236313130393036323533342d32323432333538343335303731302e746573742e6e6561722b0000006465762d32303236313130393036323533352d36393831303733373639373331332e746573742e6e6561722b0000006465762d32303236313130393036323533362d35353639383538353036343938352e746573742e6e6561720d0000007265636f766572792d7461736b110000007072696d6172792d657865637574696f6e400000003634633765353935396331323635386337616534376435643636396430373165346635356265643961663732306665353932373830643266383762323737353040000000656331616365376531393232396264316466663765393833643934336530623863323537636134643666366137623865663338643633303338643434636664370d0000007265636f766572792d7461736b40000000363662653765333332633761343533333332626439643061376637646230353566356335656631613036616461363664393862333966623638313063343733614000000038383462383835376634656161313631336336313530346462333464346265616633343635313761306533316465336364646434643962343230316439643062400000003461653437366466666231366336333533633162316232633063343234623031653962616232333961646533643363303765356262393161663734383137636600000000000000000100000000000000400000003062336462323830326233313361373836653634633536623534366139316435356438643663323837306133356530656230303239636463633836366439336600400000003234303634323638353434663263323435326431666261346363653963653637386639366631613361653933333265653364653139313636343635386664643985080000000000000000000000000000020000000000000059c63176fd4ce618591e796e0b4de618",
+        "vault_id": "dev-20261109062535-69810737697313.test.near",
+        "verified_by": "dev-20261109062536-13608751029778.test.near"
+      }
+    },
+    {
+      "id": 9,
+      "at": "2026-11-09T06:26:15.873Z",
+      "kind": "guardian_warning",
+      "details": {
+        "decision": "Observe",
+        "evidence_id": "80abbf9173293b755e3c9e9a8132b10d000ab575d4bc5dfd110736d816ba1dfc",
+        "score": 75
+      }
+    },
+    {
+      "id": 10,
+      "at": "2026-11-09T06:26:16.623Z",
+      "kind": "suspicious_payment_rejected",
+      "details": {
+        "actor": "dev-20261109062537-87313061045662.test.near",
+        "evidence_id": "beb6384cc53dad8461a210185085f0217f975706389a06ce5f5c97e9116cf322",
+        "operation_id": "attacker-payment",
+        "reason": "Executor only"
+      }
+    },
+    {
+      "id": 11,
+      "at": "2026-11-09T06:26:19.679Z",
+      "kind": "guardian_quarantined",
+      "details": {
+        "decision": "Quarantine",
+        "epoch": 1,
+        "evidence_id": "beb6384cc53dad8461a210185085f0217f975706389a06ce5f5c97e9116cf322",
+        "reason": "Repeated authorization failures",
+        "task_paused": true
+      }
+    },
+    {
+      "id": 12,
+      "at": "2026-11-09T06:26:19.679Z",
+      "kind": "demo_complete",
+      "details": {
+        "complete": true,
+        "network": "sandbox"
+      }
+    }
+  ],
+  "startedAt": "2026-11-09T06:25:33.637Z",
+  "exitCode": 0,
+  "finishedAt": "2026-11-09T06:26:19.699Z"
+}

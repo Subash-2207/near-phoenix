@@ -1,0 +1,35 @@
+# Rust / NEAR build output
+/target/
+**/target/
+**/dist/
+
+# Node / Next.js generated output
+/node_modules/
+**/node_modules/
+**/.next/
+*.tsbuildinfo
+coverage/
+
+# Local tool/dependency caches in this WSL workspace
+/.cargo-local/
+/.rust-local/
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+.aws/
+.near-credentials/
+near-credentials.json
+*.pem
+*.key
+*.seed
+*.log
+
+# Machine-specific diagnostics / superseded generated manifest
+/artifacts/network-diagnostics.json
+/artifacts/wasm-manifest.json
+
+# Local timestamped copies are backups, not release sources
+/.phoenix-design-backups/
+**/*.backup-*

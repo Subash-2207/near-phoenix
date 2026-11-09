@@ -1,0 +1,167 @@
+/* Shared silver artwork keeps every workspace in the overview's visual family. */
+.px-monolith { --workspace-art: url('/images/phoenix-orbit.png'); }
+.px-monolith:not([data-section='overview']) .px-content {
+  background: linear-gradient(180deg, transparent 0, var(--bg) 800px), var(--workspace-art) right top / 100% auto no-repeat;
+}
+.px-monolith .workspace-heading {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 340px;
+  padding: 48px;
+  margin: 0 0 28px;
+  border: 1px solid #c8d4dc;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 28px;
+  color: #202b35;
+  background: #e9eef1;
+  box-shadow: 0 18px 60px #273b4a0a;
+}
+.px-monolith .workspace-heading::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -10px;
+  background: linear-gradient(90deg, #edf1f5fa 0%, #edf1f5e8 35%, #edf1f520 75%), var(--workspace-art) right center / auto 145% no-repeat;
+  animation: none;
+}
+.px-monolith .workspace-heading > div:first-child { max-width: min(65%, 720px); }
+.px-monolith .workspace-heading h1 { font-size: clamp(32px, 3.5vw, 56px); line-height: 1.08; margin: 20px 0; }
+.px-monolith .workspace-heading p:last-child { font-size: 15px; line-height: 1.6; color: #455564; max-width: 530px; }
+.px-monolith .workspace-heading .eyebrow { color: #075e71; }
+.px-monolith .workspace-heading .heading-actions { flex-wrap: wrap; }
+.px-monolith .workspace-heading .button-secondary { background: #f9fcfce8; color: #213c48; border-color: #98bac5; backdrop-filter: blur(12px); }
+:root[data-theme='dark'] .px-monolith .workspace-heading { color: #f0f7fb; background: #12202a; border-color: #344955; }
+:root[data-theme='dark'] .px-monolith .workspace-heading::before { background-image: linear-gradient(90deg, #10212bf9 0%, #10212bde 36%, #10212b55 100%), var(--workspace-art); }
+:root[data-theme='dark'] .px-monolith .workspace-heading p:last-child { color: #c1d2dd; }
+:root[data-theme='dark'] .px-monolith .workspace-heading .eyebrow { color: #73dfec; }
+:root[data-theme='dark'] .px-monolith:not([data-section='overview']) .px-content { background-image: linear-gradient(180deg, #0f1a25de 0, var(--bg) 800px), var(--workspace-art); }
+
+/* Proximity is delegated by AmbientCursor. Native pointer and click behavior remain intact. */
+.px-monolith :is(button, a.button, a.mn-primary, a.mn-quiet-link, .px-top-link) {
+  transition: scale 240ms cubic-bezier(.2,.8,.2,1), background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 240ms ease;
+  transform-origin: center;
+}
+@media (hover: hover) and (pointer: fine) {
+  :root:not([data-motion='still']) .px-monolith [data-near='true']:not(:disabled):not([aria-disabled='true']) {
+    border-color: #00acc5;
+    box-shadow: 0 0 0 1px rgb(0 178 204 / calc(var(--near, 0) * .8)), 0 8px calc(10px + var(--near, 0) * 40px) rgb(0 173 199 / calc(var(--near, 0) * .52));
+    background-color: color-mix(in srgb, var(--surface-raised) calc(100% - var(--near, 0) * 45%), #5edbe9);
+  }
+  :root:not([data-motion='still']) .px-monolith [data-near='true']:not(.magnetic-button):not(:disabled):not([aria-disabled='true']) { scale: calc(1 + var(--near, 0) * .08); }
+  :root:not([data-motion='still']) .px-monolith :is(.mn-primary, .button-primary)[data-near='true']:not(:disabled) {
+    background-color: color-mix(in srgb, #24292f calc(100% - var(--near, 0) * 100%), #00778b);
+    color: #fff;
+  }
+  .px-monolith [data-near='true']:active:not(:disabled):not([aria-disabled='true']) { scale: .98 !important; }
+}
+.px-monolith :is(button, a.button, a.mn-primary, a.mn-quiet-link, .px-top-link):focus-visible { outline: 2px solid #008da6; outline-offset: 5px; }
+
+:root[data-motion='still'] .px-monolith .workspace-heading::before { animation: none; }
+:root[data-motion='still'] .px-monolith :is(button, a) { transition-duration: 0s; }
+@media (prefers-reduced-motion: reduce) {
+  .px-monolith .workspace-heading::before { animation: none; }
+  .px-monolith :is(button, a) { transition-duration: 0s; }
+  .px-monolith [data-near] { scale: 1 !important; }
+}
+@media (max-width: 760px) {
+  .px-monolith .workspace-heading { padding: 30px 24px; min-height: 350px; border-radius: 18px; }
+  .px-monolith .workspace-heading > div:first-child { max-width: 100%; }
+  .px-monolith .workspace-heading::before { background-size: auto, auto 105%; background-image: linear-gradient(90deg, #edf1f5f2 0%, #edf1f5dc 60%, #edf1f580 100%), var(--workspace-art); }
+  :root[data-theme='dark'] .px-monolith .workspace-heading::before { background-image: linear-gradient(90deg, #10212bf5, #10212bcb), var(--workspace-art); }
+  .px-monolith .workspace-heading h1 { font-size: 36px; }
+}
+
+/* Static art only; interaction motion stays on the controls. */
+.px-monolith .mn-art { animation: none; }
+.px-monolith .mn-art-frame { transform: none; transition: none; }
+.px-monolith :is(.mn-primary, .button-primary, .button-secondary) {
+  background-image: linear-gradient(110deg, transparent 30%, #ffffff38 48%, transparent 66%);
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  :root:not([data-motion='still']) .px-monolith :is(.mn-primary, .button-primary, .button-secondary)[data-near='true']:not(:disabled):not([aria-disabled='true']) {
+    animation: phoenix-button-sheen 650ms ease-out 1;
+  }
+  :root:not([data-motion='still']) .px-monolith :is(.px-top-link, .px-icon-button, .px-command-trigger)[data-near='true'] {
+    scale: calc(1 + var(--near, 0) * .04);
+  }
+}
+@keyframes phoenix-button-sheen { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+:root[data-motion='still'] .px-monolith :is(button, a) { animation: none; }
+.px-monolith .px-cursor-follower { border-color: #00a7bd; box-shadow: 0 0 18px #00b8d05c; }
+.px-monolith .px-cursor-follower.is-expanded { background: #00c4df20; box-shadow: 0 0 0 5px #00c4df10, 0 0 26px #00b8d070; }
+
+/* Each page has its own generated image. Overview retains the phoenix. */
+.px-monolith[data-section="recovery"] { --workspace-art: url("/images/phoenix-infinity.png"); }
+.px-monolith[data-section="security"] { --workspace-art: url("/images/phoenix-shield.png"); }
+.px-monolith[data-section="escrow"] { --workspace-art: url("/images/phoenix-cube.png"); }
+.px-monolith[data-section="sentinel"] { --workspace-art: url("/images/phoenix-spire.png"); }
+.px-monolith[data-section="explorer"] { --workspace-art: url("/images/phoenix-network.png"); }
+.px-monolith[data-section="analytics"] { --workspace-art: url("/images/phoenix-analytics.png"); }
+.px-monolith[data-section="token-economics"] { --workspace-art: url("/images/phoenix-economics.png"); }
+.px-monolith[data-section="methodology"] { --workspace-art: url("/images/phoenix-methodology.png"); }
+.px-monolith[data-section="developers"] { --workspace-art: url("/images/phoenix-developers.png"); }
+.px-monolith[data-section="about"] { --workspace-art: url("/images/phoenix-orbit.png"); }
+
+/* Full-page artwork: one continuous image behind the workspace. */
+.px-monolith:not([data-section="overview"])::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(90deg, #edf1f5ed 0%, #edf1f5a6 44%, #edf1f526 100%), var(--workspace-art);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+:root[data-theme="dark"] .px-monolith:not([data-section="overview"])::before {
+  background-image: linear-gradient(90deg, #09141ee8 0%, #09141e99 44%, #09141e40 100%), var(--workspace-art);
+}
+:root[data-theme] .px-monolith:not([data-section="overview"]) .px-content {
+  background: transparent;
+}
+:root[data-theme] .px-monolith:not([data-section="overview"]) .workspace-heading {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+:root[data-theme] .px-monolith:not([data-section="overview"]) .workspace-heading::before {
+  content: none;
+  display: none;
+}
+@media (max-width: 760px) {
+  .px-monolith:not([data-section="overview"])::before { background-position: 65% center; }
+}
+
+/* Wallet access and explicit motion controls are available throughout the workspace. */
+.px-wallet-action { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-height: 38px; font-size: 12px; }
+.px-effects-action { white-space: nowrap; font-size: 11px; }
+.px-monolith :is(button, a.button, .px-top-link) { translate: 0 0; transition-property: scale, translate, background-color, color, border-color, box-shadow; }
+@media (hover: hover) and (pointer: fine) {
+  :root:not([data-motion='still']) .px-monolith [data-near='true']:not(.magnetic-button):not(:disabled):not([aria-disabled='true']) { translate: var(--near-dx, 0px) var(--near-dy, 0px); }
+  :root:not([data-motion='still']) .px-monolith [data-near='true'] .magnetic-button__content > svg { transform: translateX(4px); transition: transform 200ms ease; }
+  :root[data-motion='vivid'] .px-custom-cursor { display: block !important; }
+  :root[data-motion='vivid'] .px-monolith .magnetic-button { transform: translate3d(var(--mag-x, 0px), var(--mag-y, 0px), 0) scale(var(--mag-scale, 1)) !important; }
+  :root[data-motion='vivid'] .px-monolith [data-near='true']:not(.magnetic-button):not(:disabled) { scale: calc(1 + var(--near, 0) * .08) !important; }
+  :root[data-motion='vivid'] .px-monolith [data-near='true']:active:not(:disabled) { scale: .98 !important; }
+  :root[data-motion='vivid'] .px-monolith :is(.mn-primary, .button-primary, .button-secondary)[data-near='true']:not(:disabled) { animation: phoenix-button-sheen 650ms ease-out 1; }
+}
+@media(max-width: 1250px) { .px-monolith .px-command-trigger { width: 38px; }.px-monolith .px-command-trigger > :is(span, kbd) { display: none; } }
+@media(max-width: 760px) { .px-wallet-action { max-width: 115px; padding: 8px 10px; font-size: 11px; }.px-effects-action { padding: 8px; }.px-effects-action span { display: none; } }
+
+@media(max-width: 540px) {
+  .px-monolith .px-brand-name { display: none; }
+  .px-monolith .px-topbar { gap: 6px; padding-inline: 12px; }
+  .px-monolith .px-effects-action { min-width: 44px; min-height: 44px; }
+  .px-monolith .px-topbar-actions { gap: 2px; }
+}

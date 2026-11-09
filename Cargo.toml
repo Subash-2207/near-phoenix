@@ -1,0 +1,11 @@
+[workspace]
+members = ["contracts/phoenix-core", "contracts/rewind-vault", "crates/security-types"]
+resolver = "2"
+[workspace.dependencies]
+near-sdk = "=5.30.0"
+[profile.release]
+codegen-units = 1
+opt-level = "z"
+lto = true
+panic = "abort"
+overflow-checks = true

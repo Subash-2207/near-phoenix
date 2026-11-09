@@ -1,0 +1,28 @@
+:root[data-theme="light"] {
+  --bg: #f2f3f5;
+  --surface: #ffffff7a;
+  --surface-raised: #fff;
+  --border: #cbd1d94d;
+  --glass-border: #c5cdd6;
+  --text: #202329;
+  --muted: #59616d;
+  --cyan: #006f83;
+  --cerulean-glow: #007b8e;
+  --rose-glow: #007b8e;
+  --violet: #486a82;
+  --menu-surface: #f7f8fa;
+  --input-surface: #fff;
+  --panel-surface: #f8f9fb;
+}
+:root[data-theme="light"] body { background: #f2f3f5; }
+body { font-size: 14px; }
+.px-monolith[data-section="overview"] .workspace-content { max-width: none; padding: 0; }
+.px-monolith[data-section="overview"] .site-footer,
+.px-monolith[data-section="overview"] .px-workspace-footer { display: none; }
+.px-monolith .workspace-heading h1 { font-weight: 600; letter-spacing: -.04em; }
+.px-monolith .metric-card, .px-monolith .card { border-radius: 14px; }
+.px-monolith .mn-telemetry .metric-grid { margin-top: 0; }
+:root[data-theme="light"] .px-monolith .rn-section { box-shadow: none; }
+:root[data-theme="light"] .px-monolith .card,
+:root[data-theme="light"] .px-monolith .metric-card { box-shadow: 0 3px 20px #32445505; }
+:root[data-theme="light"] .px-monolith ::selection { background: #c0eff4; color: #17282f; }

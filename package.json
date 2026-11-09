@@ -1,0 +1,17 @@
+{
+  "name": "near-phoenix",
+  "version": "4.3.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev -w @phoenix/backend",
+    "dev:dashboard": "npm run dev -w @phoenix/dashboard",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test:contracts": "cargo test --workspace",
+    "test:backend": "npm test -w @phoenix/backend",
+    "test:phase8b": "node scripts/phase8b-proof-feasibility.test.mjs",
+    "demo:local": "bash scripts/demo-local.sh"
+  }
+}
