@@ -1,5 +1,7 @@
+
 import { notFound } from "next/navigation";
 import { dashboardSections, isDashboardSection } from "../sections";
+import PhoenixApplication from "../phoenix-application";
 
 export const dynamicParams = false;
 
@@ -15,6 +17,10 @@ export default async function DashboardSectionRoute({
   params: Promise<{ section: string }>;
 }) {
   const { section } = await params;
-  if (!isDashboardSection(section) || section === "overview") notFound();
-  return null;
+
+  if (!isDashboardSection(section) || section === "overview") {
+    notFound();
+  }
+
+  return <PhoenixApplication />;
 }
