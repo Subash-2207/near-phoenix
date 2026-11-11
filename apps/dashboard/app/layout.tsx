@@ -8,7 +8,6 @@ import "./theme-overrides.css";
 import "./monolith-theme.css";
 import "./atmosphere.css";
 import "./midnight.css";
-import PhoenixApplication from "./phoenix-application";
 import { ThemeProvider } from "./components/theme-provider";
 import { MotionPreferencesProvider } from "./components/motion-preferences";
 export const metadata = {
@@ -22,7 +21,6 @@ export default function Layout({ children }: { children: ReactNode }) {
       <body>
         <ThemeProvider>
           <MotionPreferencesProvider>
-            <PhoenixApplication />
             {children}
           </MotionPreferencesProvider>
         </ThemeProvider>
