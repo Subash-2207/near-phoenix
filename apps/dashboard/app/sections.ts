@@ -19,5 +19,5 @@ export function isDashboardSection(value: string): value is DashboardSection {
 }
 
 export function sectionHref(section: DashboardSection): string {
-  return section === "overview" ? "/" : `/${section}`;
+  return section === "overview" ? "/near-phoenix/" : `/near-phoenix/${section}/`;
 }

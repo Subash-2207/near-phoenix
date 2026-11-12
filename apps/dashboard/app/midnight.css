@@ -18,7 +18,7 @@
 :root[data-theme="dark"] .px-monolith .px-topbar { background: #061720e8; border-color: #60c8d32b; }
 :root[data-theme="dark"] .mn-overview { --mn-paper: #07151e; --mn-ink: #f1f8fa; --mn-muted: #bdd0d6; --mn-line: #a3dce238; background: #07151e; }
 :root[data-theme="dark"] .mn-stage {
-  background: #071a24 url('/images/phoenix-midnight.png') center center / cover no-repeat;
+  background: #071a24 url('/near-phoenix/images/phoenix-midnight.png') center center / cover no-repeat;
   padding: 30px 30px 34px 0;
   gap: 18px;
   min-height: min(790px, calc(100vh - 72px));

@@ -1,5 +1,5 @@
 /* Shared silver artwork keeps every workspace in the overview's visual family. */
-.px-monolith { --workspace-art: url('/images/phoenix-orbit.png'); }
+.px-monolith { --workspace-art: url('/near-phoenix/images/phoenix-orbit.png'); }
 .px-monolith:not([data-section='overview']) .px-content {
   background: linear-gradient(180deg, transparent 0, var(--bg) 800px), var(--workspace-art) right top / 100% auto no-repeat;
 }
@@ -99,16 +99,16 @@
 .px-monolith .px-cursor-follower.is-expanded { background: #00c4df20; box-shadow: 0 0 0 5px #00c4df10, 0 0 26px #00b8d070; }
 
 /* Each page has its own generated image. Overview retains the phoenix. */
-.px-monolith[data-section="recovery"] { --workspace-art: url("/images/phoenix-infinity.png"); }
-.px-monolith[data-section="security"] { --workspace-art: url("/images/phoenix-shield.png"); }
-.px-monolith[data-section="escrow"] { --workspace-art: url("/images/phoenix-cube.png"); }
-.px-monolith[data-section="sentinel"] { --workspace-art: url("/images/phoenix-spire.png"); }
-.px-monolith[data-section="explorer"] { --workspace-art: url("/images/phoenix-network.png"); }
-.px-monolith[data-section="analytics"] { --workspace-art: url("/images/phoenix-analytics.png"); }
-.px-monolith[data-section="token-economics"] { --workspace-art: url("/images/phoenix-economics.png"); }
-.px-monolith[data-section="methodology"] { --workspace-art: url("/images/phoenix-methodology.png"); }
-.px-monolith[data-section="developers"] { --workspace-art: url("/images/phoenix-developers.png"); }
-.px-monolith[data-section="about"] { --workspace-art: url("/images/phoenix-orbit.png"); }
+.px-monolith[data-section="recovery"] { --workspace-art: url("/near-phoenix/images/phoenix-infinity.png"); }
+.px-monolith[data-section="security"] { --workspace-art: url("/near-phoenix/images/phoenix-shield.png"); }
+.px-monolith[data-section="escrow"] { --workspace-art: url("/near-phoenix/images/phoenix-cube.png"); }
+.px-monolith[data-section="sentinel"] { --workspace-art: url("/near-phoenix/images/phoenix-spire.png"); }
+.px-monolith[data-section="explorer"] { --workspace-art: url("/near-phoenix/images/phoenix-network.png"); }
+.px-monolith[data-section="analytics"] { --workspace-art: url("/near-phoenix/images/phoenix-analytics.png"); }
+.px-monolith[data-section="token-economics"] { --workspace-art: url("/near-phoenix/images/phoenix-economics.png"); }
+.px-monolith[data-section="methodology"] { --workspace-art: url("/near-phoenix/images/phoenix-methodology.png"); }
+.px-monolith[data-section="developers"] { --workspace-art: url("/near-phoenix/images/phoenix-developers.png"); }
+.px-monolith[data-section="about"] { --workspace-art: url("/near-phoenix/images/phoenix-orbit.png"); }
 
 /* Full-page artwork: one continuous image behind the workspace. */
 .px-monolith:not([data-section="overview"])::before {
