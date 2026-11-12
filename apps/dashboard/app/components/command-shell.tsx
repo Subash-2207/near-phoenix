@@ -113,7 +113,7 @@ export function CommandShell({ active, onNavigate, children, networkLabel, rpcHe
       <a className="px-skip" href="#command-content">Skip to main content</a>
       <div className="px-workspace">
         <header className="px-topbar">
-          <a className="px-brand" href="/" onClick={(event) => onLink(event, "overview")} aria-label="PHOENIX overview">{brand}</a>
+          <a className="px-brand" href="/near-phoenix/" onClick={(event) => onLink(event, "overview")} aria-label="PHOENIX overview">{brand}</a>
           <div className="px-studio-name">Monolith Studio<span>NEAR PHOENIX v5.0</span></div>
           <nav className="px-horizontal-nav" aria-label="Primary navigation">
             {primaryDestinations.map((item) => (

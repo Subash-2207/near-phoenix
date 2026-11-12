@@ -80,12 +80,12 @@ export function MonolithOverview(props: Props) {
     <div className="mn-overview">
       <div className="mn-stage">
         <section className="mn-hero" ref={hero} aria-labelledby="mn-title">
-          <div className="mn-art-frame" aria-hidden="true"><img className="mn-art" src="/images/phoenix-silver.png" alt="" width="1374" height="1145" fetchPriority="high" /></div>
+          <div className="mn-art-frame" aria-hidden="true"><img className="mn-art" src="/near-phoenix/images/phoenix-silver.png" alt="" width="1374" height="1145" fetchPriority="high" /></div>
           <div className="mn-hero-copy">
             <p className="mn-eyebrow"><span /> Autonomous continuity</p>
             <h1 id="mn-title">Built to<br /><span>begin again.</span></h1>
             <p className="mn-hero-description">Recovery, security and verifiable<br className="mn-desktop-break" /> execution. One clear workspace.</p>
-            <div className="mn-hero-actions"><MagneticButton className="mn-primary" href="/recovery">Explore recovery <Icon name="arrow" size={20} /></MagneticButton><a className="mn-quiet-link" href="/methodology">How it works</a></div>
+            <div className="mn-hero-actions"><MagneticButton className="mn-primary" href="/recovery">Explore recovery <Icon name="arrow" size={20} /></MagneticButton><a className="mn-quiet-link" href="/near-phoenix/methodology/">How it works</a></div>
           </div>
           <span className="mn-art-caption"><Icon name="sentinel" size={15} /> Concept visualization</span>
         </section>
