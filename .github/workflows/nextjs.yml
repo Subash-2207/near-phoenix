@@ -34,10 +34,7 @@ jobs:
       - name: Check dashboard types
         run: npm run typecheck -w @phoenix/dashboard
       - name: Test dashboard logic
-        run: |
-          npm run test:wallet -w @phoenix/dashboard
-          npm run test:evidence -w @phoenix/dashboard
-          npm run test:transitions -w @phoenix/dashboard
+        run: npm test
       - name: Build dashboard workspace
         run: npm run build -w @phoenix/dashboard
       - name: Verify exported routes and assets
@@ -45,7 +42,7 @@ jobs:
       - name: Upload dashboard export
         uses: actions/upload-pages-artifact@v4
         with:
-          path: apps/dashboard/out
+          path: apps/solana-dashboard/out
 
   deploy:
     needs: build

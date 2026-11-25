@@ -33,3 +33,7 @@ near-credentials.json
 # Local timestamped copies are backups, not release sources
 /.phoenix-design-backups/
 **/*.backup-*
+
+# Solana product outputs and disposable local validator tools
+/local-tools/
+/apps/solana-dashboard/out/

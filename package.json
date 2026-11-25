@@ -1,17 +1,20 @@
 {
-  "name": "near-phoenix",
-  "version": "4.3.0",
+  "name": "phoenix-solana",
+  "version": "0.1.0",
   "private": true,
   "workspaces": [
-    "apps/*"
+    "apps/solana-dashboard"
   ],
   "scripts": {
-    "dev:api": "npm run dev -w @phoenix/backend",
-    "dev:dashboard": "npm run dev -w @phoenix/dashboard",
-    "typecheck": "npm run typecheck --workspaces --if-present",
-    "test:contracts": "cargo test --workspace",
-    "test:backend": "npm test -w @phoenix/backend",
-    "test:phase8b": "node scripts/phase8b-proof-feasibility.test.mjs",
-    "demo:local": "bash scripts/demo-local.sh"
+    "dev": "npm run dev -w @phoenix/dashboard",
+    "build": "npm run build -w @phoenix/dashboard",
+    "typecheck": "npm run typecheck -w @phoenix/dashboard",
+    "test": "npm run test -w @phoenix/dashboard",
+    "test:program": "cargo test -p phoenix-solana-program",
+    "build:production": "node scripts/build-production.mjs",
+    "test:production": "node --test apps/production/server/integration.test.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
   }
 }

@@ -1,0 +1,21 @@
+# PHOENIX production release
+
+The project workspace accepts customer briefs and SOL budgets. It verifies the funded project on Solana mainnet before claiming an AI job, stores each handoff as a database artifact, and binds customer review to a delivery digest. Expired worker leases can be reclaimed without accepting late output from the replaced attempt. Guardian activity reflects actual database transitions.
+
+## Build and verify
+
+Run `npm ci`, `npm test`, `node --test apps/production/server/integration.test.mjs`, and `node scripts/build-production.mjs` from the repository root. The release build contains the root-path dashboard in `dist/client` and a bundled Worker in `dist/server/index.js`. The build prints the release directory. Its `migrations/0001.sql` initializes a fresh D1 database. The Worker depends on trusted Sites identity headers for customer access. Deploy it behind Sites identity dispatch or an ingress that authenticates and overwrites those headers. Use `DB` for the database and `ASSETS` for the static dashboard binding.
+
+Provide `OPENAI_API_KEY` as a hosting secret and set `PHOENIX_MODEL` to a model available to the API project that supports structured outputs and hosted web search. Set the public keys `PHOENIX_PROGRAM_ID`, `PHOENIX_OPERATOR`, `PHOENIX_BACKUP`, `PHOENIX_SENTINEL`, and `PHOENIX_GUARDIAN`, plus the public URL in `PHOENIX_PUBLIC_ORIGIN`. Build the dashboard with `NEXT_PUBLIC_PHOENIX_MAINNET_PROGRAM` set to the deployed program for the public Recovery and Task Explorer pages. The worker processes one stage per invocation using the Worker `scheduled` handler or the authenticated `POST /api/production/worker` endpoint, which uses the `PHOENIX_WORKER_TOKEN` hosting secret for a trusted scheduler. A running scheduler is needed for work to continue after a customer closes the workspace.
+
+## Prepare the Solana rollout
+
+Build the program ELF with `cargo build-sbf --manifest-path programs/phoenix/Cargo.toml`. On the local validator, use `PHOENIX_SBF_PATH` to point `node scripts/test-solana-validator.mjs` at that exact binary. The validator tests exercise missing and unrelated funding-owner signatures, a mismatched payout digest, and a replaced checkpoint.
+
+The deployment signer should retain custody of the deploy payer, the new program keypair, and the upgrade authority. Use distinct operator, backup, Guardian and Sentinel roles. Validate the complete lifecycle on a devnet deployment and review the exact program hash before signing an equivalent mainnet deployment. A mainnet deployment consumes SOL for fees and rent. After deploying, verify the public program address is executable on mainnet and configure the same address in the runtime and dashboard build.
+
+The authorized signer can build the mainnet deployment command with `solana program deploy --url mainnet-beta --keypair <fee-payer-keypair> --program-id <new-program-keypair> --upgrade-authority <authority-keypair> phoenix_solana_program.so`. Point each placeholder at a key managed by the signer. Check the program account with `solana program show --url mainnet-beta <program-id>`. The archive contains the unsigned program, its checksum, the Worker and dashboard, and this runbook.
+
+For settlement, download the approved delivery from the project workspace and run `node scripts/prepare-phoenix-settlement.mjs path/to/approval.json` with the public Solana configuration. The command reads the bound task at finalized commitment and builds an unsigned transaction for the current operator, Sentinel, and funding owner. It commits the customer-approved digest, authorizes the exact budget and next nonce with both approval signatures, and settles to the current operator. Committing a different checkpoint invalidates the approval. The customer workspace verifies the exact digest, payout and nonce from a later finalized Solana observation. The application worker has no custody keys and never signs a transaction.
+
+Customer funding can be signed in a compatible connected wallet. Settlement authority transactions currently require the operator and Sentinel's signing workflow outside the customer workspace. The Testing Agent produces a source review and runnable test plan. Generated customer code is delivered as source and is not executed by the worker.
